@@ -3,29 +3,20 @@ using System.Linq;
 
 public class Row : IRow
 {
-    private int _rowId;
-    private IEnumerable<IKeyPair> _pairs;
-
-    public Row(int rowId, IEnumerable<IKeyPair> Pairs)
+    public Row(int rowId, IEnumerable<IKeyPair> pairs)
     {
-        _rowId = rowId;
-        _pairs = Pairs;
+        RowId = rowId;
+        Pairs = pairs;
     }
-    public int RowId{
-        get { return _rowId;}
-        set { _rowId = value; }
-    }
+    public int RowId { get; set; }
 
-    public IEnumerable<IKeyPair> Pairs{
-        get { return _pairs;}
-        set { _pairs = value; }
-    }
+    public IEnumerable<IKeyPair> Pairs{ get; set; }
 
     public string ToJson()
     {
-        var jsonArray = _pairs.Select(value => value.ToJson()).ToArray();
+        var jsonArray = Pairs.Select(value => value.ToJson()).ToArray();
         var middleJson = string.Join(", ", jsonArray);
-        var outJson = "{\"row\":"+ _rowId +",\"pairs\":[" + middleJson + "]}";
+        var outJson = "{\"row\":"+ RowId +",\"pairs\":[" + middleJson + "]}";
         return outJson;
     }
 }

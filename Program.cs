@@ -8,9 +8,8 @@ namespace CsvJsonPipeline
     {
         static void Main(string[] args)
         {
-            ErrorHandler err = new ErrorHandler();
-            string inFile = err.InFileTry(args);
-            string outFile = err.OutFileTry(args);
+            string inFile = ErrorHandler.InFileTry(args);
+            string outFile = ErrorHandler.OutFileTry(args);
         
             //read input file
             var lines = FileReader.readFile(inFile);
