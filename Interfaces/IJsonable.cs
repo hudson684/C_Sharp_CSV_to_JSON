@@ -1,4 +1,7 @@
-public interface IJsonable 
+namespace CsvJsonPipeline 
 {
-    string ToJson();
+    public interface IJsonable 
+    {
+        string ToJson();
+    }
 }

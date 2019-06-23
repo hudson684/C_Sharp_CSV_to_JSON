@@ -2,11 +2,14 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-public class FileWriter
+namespace CsvJsonPipeline 
 {
-    public static void writeFile(string outFile, string outData)
+    public class FileWriter
     {
-        File.WriteAllText(outFile, outData);
-    }
+        public static void writeFile(string outFile, string outData)
+        {
+            File.WriteAllText(outFile, outData);
+        }
 
+    }
 }

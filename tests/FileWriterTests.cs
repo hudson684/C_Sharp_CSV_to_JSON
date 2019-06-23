@@ -1,10 +1,13 @@
 using Xunit;
 
-public class FileWriterTests
+namespace CsvJsonPipeline 
 {
-    [Fact]
-    public void File_Write_Pass_Test()
+    public class FileWriterTests
     {
-        
+        [Fact]
+        public void File_Write_Pass_Test()
+        {
+            
+        }
     }
 }

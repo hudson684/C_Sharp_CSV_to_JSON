@@ -1,22 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class Row : IRow
+namespace CsvJsonPipeline 
 {
-    public Row(int rowId, IEnumerable<IKeyPair> pairs)
+    public class Row : IRow
     {
-        RowId = rowId;
-        Pairs = pairs;
-    }
-    public int RowId { get; set; }
+        public Row(int rowId, IEnumerable<IKeyPair> pairs)
+        {
+            RowId = rowId;
+            Pairs = pairs;
+        }
+        public int RowId { get; set; }
 
-    public IEnumerable<IKeyPair> Pairs{ get; set; }
+        public IEnumerable<IKeyPair> Pairs{ get; set; }
 
-    public string ToJson()
-    {
-        var jsonArray = Pairs.Select(value => value.ToJson()).ToArray();
-        var middleJson = string.Join(", ", jsonArray);
-        var outJson = "{\"row\":"+ RowId +",\"pairs\":[" + middleJson + "]}";
-        return outJson;
+        public string ToJson()
+        {
+            var jsonArray = Pairs.Select(value => value.ToJson()).ToArray();
+            var middleJson = string.Join(", ", jsonArray);
+            var outJson = "{\"row\":"+ RowId +",\"pairs\":[" + middleJson + "]}";
+            return outJson;
+        }
     }
 }

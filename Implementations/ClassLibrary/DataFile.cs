@@ -1,20 +1,23 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class DataFile : IDataFile
+namespace CsvJsonPipeline 
 {
-    public DataFile (IEnumerable<IRow> rows)
+    public class DataFile : IDataFile
     {
-        Rows = rows;
-    }
+        public DataFile (IEnumerable<IRow> rows)
+        {
+            Rows = rows;
+        }
 
-    public IEnumerable<IRow> Rows{ get; set;}
+        public IEnumerable<IRow> Rows{ get; set;}
 
-    public string ToJson()
-    {
-        var jsonArray = Rows.Select(value => value.ToJson()).ToArray();
-        var middleJson = string.Join(", ", jsonArray);
-        var outJson = "{\"rows\":[" + middleJson + "]}";
-        return outJson;
+        public string ToJson()
+        {
+            var jsonArray = Rows.Select(value => value.ToJson()).ToArray();
+            var middleJson = string.Join(", ", jsonArray);
+            var outJson = "{\"rows\":[" + middleJson + "]}";
+            return outJson;
+        }
     }
 }

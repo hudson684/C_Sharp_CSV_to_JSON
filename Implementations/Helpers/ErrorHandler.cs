@@ -1,45 +1,48 @@
 using System;
-public class ErrorHandler
+namespace CsvJsonPipeline 
 {
-    public static string InFileTry(string[] args)
+    public class ErrorHandler
     {
-        string inFile;
-        try
+        public static string InFileTry(string[] args)
         {
-            inFile = args[0];
-        }
-        catch (System.IndexOutOfRangeException)
-        {
-            MissingArgumentMessage("both arguments");
-            throw new Exception("Missing Input Arugments");
+            string inFile;
+            try
+            {
+                inFile = args[0];
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                MissingArgumentMessage("both arguments");
+                throw new Exception("Missing Input Arugments");
+            }
+
+            return inFile;
         }
 
-        return inFile;
-    }
-
-    public static string OutFileTry(string[] args)
-    {
-        string outFile;
-        try
+        public static string OutFileTry(string[] args)
         {
-            outFile = args[1];
+            string outFile;
+            try
+            {
+                outFile = args[1];
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                MissingArgumentMessage("the second argument");
+                throw new Exception("Missing Second input arugment");
+            }
+            return outFile;
         }
-        catch (System.IndexOutOfRangeException)
-        {
-            MissingArgumentMessage("the second argument");
-            throw new Exception("Missing Second input arugment");
-        }
-        return outFile;
-    }
 
-    private static void MissingArgumentMessage (string missingLine)
-    {
-         Console.WriteLine("#########################################################################");
+        private static void MissingArgumentMessage (string missingLine)
+        {
             Console.WriteLine("#########################################################################");
-            Console.WriteLine($"Hello! This console requires two arguments and is missing {missingLine}.");
-            Console.WriteLine("Argument 1 should be the file path to the input .csv file");
-            Console.WriteLine("Argument 2 should be the file path to the output .json file");
-            Console.WriteLine("#########################################################################");
-            Console.WriteLine("#########################################################################");  
+                Console.WriteLine("#########################################################################");
+                Console.WriteLine($"Hello! This console requires two arguments and is missing {missingLine}.");
+                Console.WriteLine("Argument 1 should be the file path to the input .csv file");
+                Console.WriteLine("Argument 2 should be the file path to the output .json file");
+                Console.WriteLine("#########################################################################");
+                Console.WriteLine("#########################################################################");  
+        }
     }
 }

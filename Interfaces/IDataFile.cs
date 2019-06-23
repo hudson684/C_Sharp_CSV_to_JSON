@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 
-public interface IDataFile : IJsonable
+namespace CsvJsonPipeline 
 {
-   IEnumerable<IRow> Rows { get; set; }
+   public interface IDataFile : IJsonable
+   {
+      IEnumerable<IRow> Rows { get; set; }
+   }
 }

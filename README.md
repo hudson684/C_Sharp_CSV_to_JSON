@@ -34,3 +34,10 @@ from the command line, or terminal, navigate to the main folder of this applicat
 dotnet build
 dotnet run {argument 1} {argument 2}
 ```
+
+To see an example using data already provided, run the following commands
+
+```cmd
+dotnet build
+dotnet run "./data/athletes.csv" "./data/athletes.json"
+```

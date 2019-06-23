@@ -1,24 +1,27 @@
-public class KeyPair : IKeyPair
+namespace CsvJsonPipeline 
 {
-   private string _key;
-   private string _value;
-   public KeyPair(string Key, string Value)
+   public class KeyPair : IKeyPair
    {
-      _key = Key;
-      _value = Value;
-   }
-   public string Key{
-      get { return _key; }
-      set { _key = value; }
-   }
-   public string Value{
-      get { return _value; }
-      set { _value = value; }
-   }
+      private string _key;
+      private string _value;
+      public KeyPair(string Key, string Value)
+      {
+         _key = Key;
+         _value = Value;
+      }
+      public string Key{
+         get { return _key; }
+         set { _key = value; }
+      }
+      public string Value{
+         get { return _value; }
+         set { _value = value; }
+      }
 
-   public string ToJson()
-   {
-      return "{\"key\":\"" + _key + "\",\"value\":\"" + _value +"\"}";
-   }
+      public string ToJson()
+      {
+         return "{\"key\":\"" + _key + "\",\"value\":\"" + _value +"\"}";
+      }
 
+   }
 }

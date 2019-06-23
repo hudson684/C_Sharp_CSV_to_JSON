@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 
-public interface IRow : IJsonable
+namespace CsvJsonPipeline 
 {
-   int RowId { get; set; }
-   IEnumerable<IKeyPair> Pairs { get; set; }
+   public interface IRow : IJsonable
+   {
+      int RowId { get; set; }
+      IEnumerable<IKeyPair> Pairs { get; set; }
+   }
 }

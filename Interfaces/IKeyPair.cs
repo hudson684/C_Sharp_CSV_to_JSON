@@ -1,7 +1,10 @@
 using System;
 
-public interface IKeyPair : IJsonable
+namespace CsvJsonPipeline 
 {
-   string Key { get; set; }
-   string Value { get; set; }
+   public interface IKeyPair : IJsonable
+   {
+      string Key { get; set; }
+      string Value { get; set; }
+   }
 }

@@ -2,11 +2,14 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-public class FileReader 
+namespace CsvJsonPipeline 
 {
-    public static IEnumerable<String> readFile(string inFile)
+    public class FileReader 
     {
-        return File.ReadAllLines(inFile);
-    }
+        public static IEnumerable<String> readFile(string inFile)
+        {
+            return File.ReadAllLines(inFile);
+        }
 
+    }
 }
