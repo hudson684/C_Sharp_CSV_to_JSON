@@ -1,0 +1,4 @@
+interface IJsonable 
+{
+    string ToJson();
+}
