@@ -13,11 +13,11 @@ namespace CsvJsonPipeline
             string outFile = err.OutFileTry(args);
         
             //read input file
-            var lines = File.ReadLines(inFile);
+            var lines = FileReader.readFile(inFile);
             //make data
-            DataFile data = new DataFile(lines);
+            DataFile data = CsvToDataFile.CreateDataFile(lines);
             //write output file
-            File.WriteAllText(outFile, data.ToJson());
+            FileWriter.writeFile(outFile, data.ToJson());
         }
     }  
 }
