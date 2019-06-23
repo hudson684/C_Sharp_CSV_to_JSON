@@ -1,4 +1,4 @@
-interface IJsonable 
+public interface IJsonable 
 {
     string ToJson();
 }

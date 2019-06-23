@@ -1,4 +1,4 @@
-public class KeyPair : IKeyPair , IJsonable
+public class KeyPair : IKeyPair
 {
    private string _key;
    private string _value;
