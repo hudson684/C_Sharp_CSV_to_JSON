@@ -15,13 +15,13 @@ public class RowTests
 
     //constructor one tests
     //TODO: fix this test?
-    //[Fact]
-    public void Row_Constructor_Pairs_Pass()
-    {
-        Row testRow = new Row(GenericId, headers, data);
-        var actual = testRow.Pairs.ToArray();
-        Assert.Equal(keyArray, actual);
-    }
+    // [Fact]
+    // public void Row_Constructor_Pairs_Pass()
+    // {
+    //     Row testRow = new Row(GenericId, headers, data);
+    //     var actual = testRow.Pairs.ToArray();
+    //     Assert.Equal(keyArray, actual);
+    // }
 
     [Fact]
     public void Row_Constructor_Id_Pass()
