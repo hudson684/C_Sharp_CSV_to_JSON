@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace CsvJsonPipeline 
 {
-    public class FileReader 
+    public class FileReader : IFileReader
     {
-        public static IEnumerable<String> readFile(string inFile)
+        public IEnumerable<string> readFile(string inFile)
         {
             return File.ReadAllLines(inFile);
         }

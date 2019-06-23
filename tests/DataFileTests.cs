@@ -5,10 +5,11 @@ namespace CsvJsonPipeline
 {
     public class DataFileTests
     {
+        static IRowCreator rowCreator = Factory.CreateRowCreator();
         private static string[] headers = new string[] {"name", "age"};
         private static string data = "John,20";
-        private static Row testRow = CsvToRow.CreateRow(0, headers, data);
-        private static Row testRow2 = CsvToRow.CreateRow(1, headers, data);
+        private static IRow testRow = rowCreator.CreateRow(0, headers, data);
+        private static IRow testRow2 = rowCreator.CreateRow(1, headers, data);
         private IRow[] testRows = new IRow[] {testRow};
 
         [Fact]

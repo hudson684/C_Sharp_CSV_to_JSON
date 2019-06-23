@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace CsvJsonPipeline 
 {
-    public class FileWriter
+    public class FileWriter : IFileWriter
     {
-        public static void writeFile(string outFile, string outData)
+        public  void writeFile(string outFile, string outData)
         {
             File.WriteAllText(outFile, outData);
         }
